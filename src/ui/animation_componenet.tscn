@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpcirevnh8m1e"]
+
+[ext_resource type="Script" path="res://src/ui/animation_componenet.gd" id="1_usdx7"]
+
+[node name="animation_componenet" type="Node"]
+script = ExtResource("1_usdx7")
+hover_position = Vector2(10, 0)
+hover_size = Vector2(5, 5)

@@ -1,0 +1,161 @@
+[gd_scene load_steps=4 format=3 uid="uid://7mcnju6ke0ty"]
+
+[ext_resource type="Script" path="res://src/ikrig/gbot/ui/parameters.gd" id="1_gxpr3"]
+
+[sub_resource type="Theme" id="Theme_8cxl1"]
+
+[sub_resource type="Theme" id="Theme_3u18h"]
+Label/font_sizes/font_size = 19
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+theme = SubResource("Theme_8cxl1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="PanelContainer" type="ScrollContainer" parent="Control"]
+custom_minimum_size = Vector2(200, 600)
+layout_mode = 1
+offset_right = 8.0
+offset_bottom = 8.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="Parameters" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_3u18h")
+script = ExtResource("1_gxpr3")
+
+[node name="run" type="Button" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "run"
+
+[node name="walk" type="Button" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "walk"
+
+[node name="toggle_constant_speed" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "Constant speed"
+
+[node name="IsSpeedConstant" type="CheckButton" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+
+[node name="stepSize" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "Step Size"
+
+[node name="stepSizeSlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+max_value = 1000.0
+step = 5.0
+value = 200.0
+
+[node name="speedMin" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "Speed min"
+
+[node name="speedMinSlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+min_value = 50.0
+max_value = 200.0
+step = 10.0
+value = 100.0
+
+[node name="speedMax" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "Speed max"
+
+[node name="speedMaxSlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+min_value = 100.0
+max_value = 300.0
+step = 10.0
+value = 200.0
+
+[node name="footBefore_x" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "Foot before x"
+
+[node name="footBefore_xSlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+min_value = -20.0
+max_value = 20.0
+
+[node name="footBefore_y" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "Foot before y"
+
+[node name="footBefore_ySlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+min_value = -60.0
+max_value = 0.0
+
+[node name="oppositePgStep" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "oppositePgStep"
+
+[node name="oppositePgStepSlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="max_leg_height" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "max leg height"
+
+[node name="max_leg_heightSlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+min_value = 20.0
+max_value = 150.0
+value = 51.0
+
+[node name="min_leg_height" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "min leg height"
+
+[node name="min_leg_heightSlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+min_value = 2.0
+max_value = 50.0
+value = 18.0
+
+[node name="leg_offset" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "leg offset"
+
+[node name="legOffsetSlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+max_value = 300.0
+value = 160.0
+
+[node name="armOffset" type="Label" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+text = "armOffset L"
+
+[node name="armOffsetSlider" type="HSlider" parent="Control/PanelContainer/Parameters"]
+layout_mode = 2
+max_value = 50.0
+value = 20.0
+
+[connection signal="pressed" from="Control/PanelContainer/Parameters/run" to="Control/PanelContainer/Parameters" method="_on_run_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/Parameters/walk" to="Control/PanelContainer/Parameters" method="_on_walk_pressed"]
+[connection signal="toggled" from="Control/PanelContainer/Parameters/IsSpeedConstant" to="Control/PanelContainer/Parameters" method="_on_is_speed_constant_toggled"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/stepSizeSlider" to="Control/PanelContainer/Parameters" method="_on_step_size_x_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/speedMinSlider" to="Control/PanelContainer/Parameters" method="_on_speed_min_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/speedMaxSlider" to="Control/PanelContainer/Parameters" method="_on_speed_max_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/footBefore_xSlider" to="Control/PanelContainer/Parameters" method="_on_foot_before_x_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/footBefore_ySlider" to="Control/PanelContainer/Parameters" method="_on_foot_before_y_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/oppositePgStepSlider" to="Control/PanelContainer/Parameters" method="_on_opposite_pg_step_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/max_leg_heightSlider" to="Control/PanelContainer/Parameters" method="_on_max_leg_height_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/min_leg_heightSlider" to="Control/PanelContainer/Parameters" method="_on_min_leg_height_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/legOffsetSlider" to="Control/PanelContainer/Parameters" method="_on_leg_offset_slider_value_changed"]
+[connection signal="value_changed" from="Control/PanelContainer/Parameters/armOffsetSlider" to="Control/PanelContainer/Parameters" method="_on_arm_offset_slider_value_changed"]
