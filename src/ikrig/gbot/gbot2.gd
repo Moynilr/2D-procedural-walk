@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var anim := $"../AnimationPlayer"
 @onready var floorRaycast : ShapeCast2D = $floorRayCast
 @onready var stepWidthRayCast : RayCast2D = $stepWidthRayCast
-const SPEED = 300.0
+var speed = 300.0
 const JUMP_VELOCITY = -600.0
 const MAX_STEP_HEIGHT = 85
 
@@ -17,6 +17,10 @@ func _ready() -> void:
 func teleport(point_to: Vector2):
 	global_position = point_to
 
+func ui_set(key: String, value):
+	if key=="speed":
+		speed = value
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_grounded():
@@ -28,17 +32,17 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("left", "right")
 	
 	if direction:
 		if direction/abs(direction) != previous_dir:
 			previous_dir = direction/abs(direction)
 			get_tree().call_group("invert", "inverse", Vector2(previous_dir, 1))
 			
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 		play_anim("run")
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 		play_anim("idle")
 
 	move_with_steps(delta)

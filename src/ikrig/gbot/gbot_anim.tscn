@@ -29,7 +29,7 @@
 [ext_resource type="Script" path="res://src/ikrig/gbot/character_anim.gd" id="26_nyfjt"]
 [ext_resource type="Script" path="res://src/ikrig/gbot/hip_handler.gd" id="29_yyb15"]
 [ext_resource type="Script" path="res://src/ikrig/gbot/camera_2d.gd" id="32_cch8m"]
-[ext_resource type="PackedScene" uid="uid://7mcnju6ke0ty" path="res://src/ikrig/gbot/ui.tscn" id="32_fmtym"]
+[ext_resource type="PackedScene" uid="uid://7mcnju6ke0ty" path="res://src/ikrig/gbot/ui/ui.tscn" id="32_fmtym"]
 [ext_resource type="Script" path="res://src/ikrig/gbot/footTarget.gd" id="33_4sp3a"]
 [ext_resource type="Script" path="res://src/ikrig/gbot/arm_handler.gd" id="34_fjimr"]
 
@@ -150,7 +150,7 @@ offset = Vector2(31, 4.5)
 [node name="GBotForearmR" type="Sprite2D" parent="CharacterContainer/Body"]
 position = Vector2(-126.867, 84.0972)
 rotation = 0.662151
-scale = Vector2(0.999998, 0.999998)
+scale = Vector2(0.999999, 0.999999)
 texture = ExtResource("13_xmrhv")
 offset = Vector2(16, 58)
 
@@ -272,6 +272,7 @@ position = Vector2(22, 109)
 [node name="ArmR" type="Bone2D" parent="CharacterContainer/Bone/Skeleton2D/Hip/Torso"]
 position = Vector2(29.5112, -127.429)
 rotation = 1.21981
+scale = Vector2(1, 1)
 rest = Transform2D(0.656803, 0.754062, -0.754062, 0.656803, 29.5112, -127.429)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterContainer/Bone/Skeleton2D/Hip/Torso/ArmR"]

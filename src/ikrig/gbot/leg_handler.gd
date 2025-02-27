@@ -59,6 +59,7 @@ func set_move(isMoveIn):
 	if not isMoving:
 		if idlePos.is_colliding():
 			lastTarget = idlePos.get_collision_point()
+			print("set target to idlePos  ", name)
 			set_foot_target(false, 10)
 		
 func _physics_process(_delta: float) -> void:
@@ -97,14 +98,12 @@ func set_foot_target(from_ground, dist_to_ground):
 		footCharacter.set_target(lastTarget, from_ground, dist_to_ground, get_step_sign())
 		$Polygon2D.global_position = lastTarget
 	
-
 func refresh_raycast():
 	oppositeLegRaycast.force_update_transform()
 	oppositeLegRaycast.force_raycast_update()
 	oppositeLegRaycast.update()
 	if oppositeLegRaycast.lastHitPoint != null:
 		lastTarget = oppositeLegRaycast.lastHitPoint
-
 
 func get_distance_to_target():
 	return abs(footCharacter.global_position.distance_to(oppositeLegRaycast.lastHitPoint))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://l2ompwink2au"]
+[gd_scene load_steps=33 format=3 uid="uid://l2ompwink2au"]
 
 [ext_resource type="Script" path="res://src/ikrig/gbot/InverseScale.gd" id="1_syog3"]
 [ext_resource type="Texture2D" uid="uid://c5kqhpd0uru5k" path="res://assets/tuto/gbot/gBot_arm_l.png" id="3_jnu8c"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://src/ikrig/gbot/disabled_remote_transform.gd" id="24_21g3u"]
 [ext_resource type="Script" path="res://src/ikrig/gbot/gbot2.gd" id="24_m2wt8"]
 [ext_resource type="Script" path="res://src/ikrig/gbot/iks_legs.gd" id="25_vybbr"]
+[ext_resource type="PackedScene" uid="uid://cpi657ivx4t0b" path="res://src/ikrig/gbot/ui/ui2.tscn" id="26_pm6ib"]
 [ext_resource type="Script" path="res://src/ikrig/gbot/camera_2d.gd" id="31_4ikme"]
 
 [sub_resource type="Animation" id="Animation_flktl"]
@@ -756,14 +757,14 @@ texture = ExtResource("9_qr27g")
 offset = Vector2(5, -128)
 
 [node name="GBotHead" type="Sprite2D" parent="CharacterContainer/Body"]
-position = Vector2(34.3886, -657.356)
-rotation = 0.0416995
+position = Vector2(34.3885, -657.356)
+rotation = 0.0416987
 scale = Vector2(0.999983, 0.999983)
 texture = ExtResource("10_u7787")
 
 [node name="GBotJaw" type="Sprite2D" parent="CharacterContainer/Body"]
 position = Vector2(-43.0325, -509.912)
-rotation = 0.0416995
+rotation = 0.0416987
 scale = Vector2(0.999983, 0.999983)
 texture = ExtResource("11_dvd7o")
 offset = Vector2(79, -15)
@@ -861,7 +862,7 @@ remote_path = NodePath("../../../../../Body/GBotBody")
 
 [node name="Head" type="Bone2D" parent="CharacterContainer/Bone/Skeleton2D/Hip/Torso"]
 position = Vector2(157.632, -132.624)
-rotation = 0.800225
+rotation = 0.800224
 scale = Vector2(0.999983, 0.999983)
 rest = Transform2D(0.543447, 0.839424, -0.839424, 0.543447, 157.632, -132.624)
 
@@ -1047,7 +1048,7 @@ libraries = {
 "": SubResource("AnimationLibrary_ac2hg")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["ui_set"]]
 floor_snap_length = 0.0
 script = ExtResource("24_m2wt8")
 
@@ -1179,3 +1180,7 @@ rotation = 0.0107523
 
 [node name="FootL LookAt" type="Node2D" parent="CharacterBody2D/IK Targets/Hip Target/iks_legs/interpolations/intermediate_targets"]
 position = Vector2(109, 373)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("26_pm6ib")]

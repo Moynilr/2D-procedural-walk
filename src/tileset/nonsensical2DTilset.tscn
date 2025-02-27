@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cqmve3csh45xs"]
+[gd_scene load_steps=21 format=4 uid="uid://cqmve3csh45xs"]
 
 [ext_resource type="Texture2D" uid="uid://cv5jjm0bi86p1" path="res://assets/tileset/nonsensical2D/grass.png" id="1_dnwfw"]
 [ext_resource type="Texture2D" uid="uid://dw0ky23o7ejed" path="res://assets/tileset/rock1/Tilemap_AutoTile_128.png" id="2_01rbm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://src/tileset/polygon_2d.gd" id="4_xiubp"]
 [ext_resource type="Script" path="res://src/tileset/polygon_2d_2.gd" id="5_4uunn"]
 [ext_resource type="Script" path="res://src/tileset/area_teleport_start.gd" id="6_hjedw"]
+[ext_resource type="Theme" uid="uid://c0tbqoe8xgcvm" path="res://assets/new_theme.tres" id="7_3n4kq"]
 [ext_resource type="PackedScene" uid="uid://bpcirevnh8m1e" path="res://src/ui/animation_componenet.tscn" id="7_kg2a7"]
 [ext_resource type="Script" path="res://src/ui/menu.gd" id="8_80gbj"]
 
@@ -174,7 +175,7 @@ tile_map_data = PackedByteArray("AAAJAAIAAQABAAIAAAAKAAIAAQABAAMAAAALAAIAAQABAAM
 tile_set = SubResource("TileSet_tmqn7")
 
 [node name="procedural" parent="." instance=ExtResource("3_r70sj")]
-position = Vector2(1659.23, 72.8121)
+position = Vector2(1650.41, 114.734)
 scale = Vector2(0.23, 0.23)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -219,51 +220,63 @@ position = Vector2(3134.23, -131.487)
 shape = SubResource("RectangleShape2D_v6xij")
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("coll_source")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("4_xiubp")
 coll_source = NodePath("../CollisionPolygon2D")
 
 [node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
 position = Vector2(2621.23, 66.1928)
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D")
 
 [node name="Polygon2D3" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D2")
 
 [node name="Polygon2D4" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D3")
 
 [node name="Polygon2D5" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D4")
 
 [node name="Polygon2D6" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D5")
 
 [node name="Polygon2D7" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D6")
 
 [node name="Polygon2D8" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D7")
 
 [node name="Polygon2D9" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D8")
 
 [node name="Polygon2D10" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D9")
 
 [node name="Polygon2D11" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D10")
 
 [node name="Polygon2D12" type="Polygon2D" parent="StaticBody2D" node_paths=PackedStringArray("cool_shape")]
+color = Color(0.807843, 0.678431, 0.176471, 1)
 script = ExtResource("5_4uunn")
 cool_shape = NodePath("../CollisionShape2D11")
 
@@ -305,9 +318,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -317.0
-offset_bottom = 66.0
+offset_left = -316.0
+offset_top = 19.0
+offset_right = 1.0
+offset_bottom = 85.0
 grow_horizontal = 0
+theme = ExtResource("7_3n4kq")
 script = ExtResource("8_80gbj")
 
 [node name="PanelContainer" type="VBoxContainer" parent="CanvasLayer/Control/menu"]
@@ -333,6 +349,28 @@ layout_mode = 2
 text = "Animation, ik foots and step solver walk"
 
 [node name="animation_componenet" parent="CanvasLayer/Control/menu/PanelContainer/animationik" instance=ExtResource("7_kg2a7")]
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Arrows key to move"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Control/menu/PanelContainer/teleport_to_begin" to="CanvasLayer/Control/menu" method="_on_teleport_to_begin_pressed"]

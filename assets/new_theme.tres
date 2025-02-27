@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c0tbqoe8xgcvm"]
+
+[ext_resource type="FontFile" uid="uid://xccr5f1av11m" path="res://assets/Anklepants.otf" id="1_esvs8"]
+
+[resource]
+default_font = ExtResource("1_esvs8")
+default_font_size = 16

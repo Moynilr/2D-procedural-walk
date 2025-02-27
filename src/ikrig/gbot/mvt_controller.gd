@@ -16,8 +16,8 @@ func _physics_process(_delta: float) -> void:
 		secondRefresh -= 1
 		get_tree().call_group("targetable", "refresh_target", false)
 		
-	var right = Input.is_action_just_pressed("ui_right")
-	var left = Input.is_action_just_pressed("ui_left")
+	var right = Input.is_action_just_pressed("right")
+	var left = Input.is_action_just_pressed("left")
 	
 	if right or left:
 		if not begin:

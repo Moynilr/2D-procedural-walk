@@ -28,4 +28,8 @@ func change_gb(to_instantiate, return_if):
 
 
 func _on_teleport_to_begin_pressed() -> void:
-	current_gbot.global_position = Vector2(1642, 0)
+	if is_procedural:
+		change_gb(procedural, false)
+		is_procedural = true
+	else:
+		current_gbot.global_position = Vector2(1642, 0)
